@@ -1,3 +1,6 @@
+sas/local_settings.py
+sas/log/*.log
+
 *.py[cod]
 
 # C extensions

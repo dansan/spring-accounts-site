@@ -1,0 +1,41 @@
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	<h3>Add an existing player account</h3>
+    <p><br/></p>
+    <p>Please supply the name and password you use in your lobby client to connect.</p>
+    <p style="font-style: oblique;">No password is ever stored on this site!</p>
+</div>
+<div class="modal-body">
+{% if spp_form.splf_username.errors %}
+    <div class="alert alert-error">
+  {% for errmsg in spp_form.splf_username.errors %}
+      <p><strong>Error:</strong> {{ errmsg }}</p>
+  {% endfor %}
+    </div>
+{% endif %}
+{% if success %}
+    <div class="alert alert-success">
+      <p><strong>Success!</strong> You successfully added the account <strong>{{ success.name }}</strong>.</p>
+      <p>You can add another account now, or close the window.</p>
+    </div>
+{% endif %}
+	<form action="{% url sas.views.home %}" method="post" id="addPlayerForm">
+      {% csrf_token %}
+      <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span6">
+              <h4>Username</h4>
+              <p>{{ spp_form.splf_username }}</p>
+            </div>
+            <div class="span6">
+              <h4>Password</h4>
+              <p>{{ spp_form.splf_password }}</p>
+            </div>
+          </div>
+        </div>
+      </form>
+</div>
+<div class="modal-footer">
+	<button type="button" data-dismiss="modal" class="btn addmodalclose">Close</button>
+	<button type="button" class="btn btn-primary addaccount">Ok</button>
+</div>
