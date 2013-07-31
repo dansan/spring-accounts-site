@@ -17,6 +17,7 @@ The software is licensed as GPLv3, see COPYING.
 
 Used software:
 * https://www.djangoproject.com/ (1.4.5)
+* https://github.com/openid/python-openid (2.2.5)
 * https://launchpad.net/django-openid-auth/ (0.5)
 * http://jquery.com/ (1.9.1)
 * http://jqueryui.com/ (1.10.3)
