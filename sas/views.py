@@ -25,8 +25,12 @@ logger = logging.getLogger(__package__)
 
 @login_required
 def home(request):
-    c = dict()
-    c["playeraccounts"] = SpringAccount.objects.filter(user=request.user).order_by("-id")
+    c = {
+        'playeraccounts': SpringAccount.objects.filter(
+            user=request.user
+        ).order_by("-id")
+    }
+
     return render_to_response("home.html", c, context_instance=RequestContext(request))
 
 def next_works(request):
