@@ -1,7 +1,7 @@
 from django.conf import global_settings
 from os.path import realpath, dirname
 
-SPACC_FILE_ROOT = realpath(dirname(__file__))+"/"
+SPACC_FILE_ROOT = f'{realpath(dirname(__file__))}/'
 
 DATE_FORMAT = 'd.m.Y'
 #DATETIME_FORMAT = 'd.m.Y H:i:s (T)'
@@ -12,7 +12,7 @@ SHORT_DATETIME_FORMAT = SHORT_DATE_FORMAT
 
 #AUTH_PROFILE_MODULE = 'lobbyauth.UserProfile'
 
-LOG_PATH        = realpath(dirname(__file__))+'/log'
+LOG_PATH = f'{realpath(dirname(__file__))}/log'
 DEBUG_FORMAT = '%(asctime)s %(levelname)-8s %(module)s.%(funcName)s:%(lineno)d  %(message)s'
 INFO_FORMAT  = '%(asctime)s %(levelname)-8s %(message)s'
 LOG_DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
@@ -65,9 +65,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-STATICFILES_DIRS = (
-    SPACC_FILE_ROOT+"static/",
-)
+STATICFILES_DIRS = (f'{SPACC_FILE_ROOT}static/', )
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -101,9 +99,7 @@ ROOT_URLCONF = 'sas.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'sas.wsgi.application'
 
-TEMPLATE_DIRS = (
-    SPACC_FILE_ROOT+'/templates/'
-)
+TEMPLATE_DIRS = f'{SPACC_FILE_ROOT}/templates/'
 
 INSTALLED_APPS = (
     'django.contrib.auth',

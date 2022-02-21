@@ -13,13 +13,14 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
+
 import os,sys
 from os.path import realpath, dirname
 
 #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sas.settings")
 os.environ["DJANGO_SETTINGS_MODULE"] = "sas.settings"
 
-sys.path.append(realpath(realpath(dirname(__file__))+"/.."))
+sys.path.append(realpath(f'{realpath(dirname(__file__))}/..'))
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
